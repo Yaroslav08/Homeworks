@@ -5,9 +5,9 @@ namespace LW1
 {
     public class Calculator
     {
-        private int commonLength;
-        private int firstSpeed;
-        private int secondSpeed;
+        private double commonLength;
+        private double firstSpeed;
+        private double secondSpeed;
 
         public Calculator(int commonLength, int firstSpeed, int secondSpeed)
         {
@@ -16,9 +16,9 @@ namespace LW1
             this.secondSpeed = secondSpeed;
         }
 
-        public int GetHoursOfWalk()
+        public double GetHoursOfWalk()
         {
-            return commonLength / (firstSpeed + secondSpeed);
+            return Math.Round(commonLength / (firstSpeed + secondSpeed), 3);
         }
     }
 }
