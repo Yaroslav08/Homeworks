@@ -16,7 +16,7 @@ namespace LW1
             this.secondSpeed = secondSpeed;
         }
 
-        public int GetMinutesOfWalk()
+        public int GetHoursOfWalk()
         {
             return commonLength / (firstSpeed + secondSpeed);
         }
