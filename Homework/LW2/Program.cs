@@ -5,7 +5,7 @@ namespace LW2
     {
         static void Main(string[] args)
         {
-            
+            Console.WriteLine(NumericSeries.GetSum(5, 5));
         }
     }
 }
