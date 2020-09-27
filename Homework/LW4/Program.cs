@@ -7,8 +7,8 @@ namespace LW4
     {
         static void Main(string[] args)
         {
-            var arr = new int[,] { { 1, 2 }, { 4, 56 }, { 45, 46 }, { 13, 11 }, { 67, 5 } };
-            Console.WriteLine(GetCount(arr));
+            var arr = new int[,] { { 1, 2 }, { 4, 56 }, { 45, 46 }, { 13, 12 }, { 67, 5 } };
+            Console.WriteLine($"Common count {GetCount(arr)}");
         }
 
         static int GetCount(int[,] arr)
