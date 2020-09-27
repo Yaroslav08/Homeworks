@@ -5,6 +5,18 @@ namespace LW5
 {
     public class Matrix
     {
+        static Matrix matrix;
+        private int[,] arr;
+        public static Matrix GetInstance()
+        {
+            if (matrix == null)
+                matrix = new Matrix();
+            return matrix;
+        }
+        public Matrix()
+        {
+            arr = createMatrix();
+        }
         public void DisplayMatrix(int [,] arr)
         {
             for (int i = 0; i < 4; i++)
@@ -15,6 +27,7 @@ namespace LW5
                 }
                 Console.WriteLine();
             }
+            Console.WriteLine();
         }
         public void ChangeDiagonal(ref int[,] arr)
         {
@@ -52,6 +65,23 @@ namespace LW5
                         arr[i, j] = 0;
                 }
             }
+        }
+        private int[,] createMatrix()
+        {
+            Random rnd = new Random();
+            var matrix = new int[4, 4];
+            for (int i = 0; i < 4; i++)
+            {
+                for (int j = 0; j < 4; j++)
+                {
+                    matrix[i, j] = rnd.Next(0, 5);
+                }
+            }
+            return matrix;
+        }
+        public int[,] GetLocalMatrix()
+        {
+            return arr;
         }
     }
 }
