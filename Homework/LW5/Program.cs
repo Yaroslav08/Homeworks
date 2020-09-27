@@ -6,8 +6,14 @@ namespace LW5
     {
         static void Main(string[] args)
         {
-            int[,] arr = { { 0, 1, 2, 3 }, { 4, 5, 6, 7 }, { 8, 9, 10, 11 }, { 12, 13, 14, 15 } };
-
+            Matrix matrix = new Matrix();
+            var arr = new int[,] { { 0, 1, 2, 3 }, { 4, 5, 6, 7 }, { 8, 9, 10, 11 }, { 12, 13, 14, 15 } };
+            matrix.DisplayMatrix(arr);
+            matrix.ChangeUpperPart(ref arr);
+            matrix.ChangeLowerPart(ref arr);
+            Console.WriteLine();
+            matrix.DisplayMatrix(arr);
         }
+        
     }
 }
