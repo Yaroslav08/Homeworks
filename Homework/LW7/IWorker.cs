@@ -5,7 +5,7 @@ namespace LW7
 {
     public interface IWorker<T>
     {
-        public void AddValueToList(T value);
-        public int GetIndexByValue(T value);
+        void AddValueToList(T value);
+        int GetIndexByValue(T value);
     }
 }
