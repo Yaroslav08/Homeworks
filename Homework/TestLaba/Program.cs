@@ -6,6 +6,8 @@ using System.Linq;
 using YoutubeExplode;
 using YoutubeExplode.Converter;
 using YoutubeExplode.Videos.Streams;
+using TestLaba.Koatuu;
+using System.Text;
 
 namespace TestLaba
 {
@@ -13,6 +15,7 @@ namespace TestLaba
     {
         static async Task Main(string[] args)
         {
+            Console.OutputEncoding = Encoding.UTF8;
             //var userRepos = CreateUserRepos();
             //var postRepos = CreatePostRepos();
 
@@ -59,17 +62,45 @@ namespace TestLaba
             //var posts1 = await postRepos.GetPostsByUserIdAsync(1);
 
             //var posts2 = await postRepos.GetPostsByUserIdAsync(2);
-            var youtube = new YoutubeClient();
-            IYoutubeConverter _youtubeConverter = new YoutubeConverter();
-            var streamManifest = await youtube.Videos.Streams.GetManifestAsync("https://youtu.be/2zToEPpFEN8");
-            var audioStreamInfo = streamManifest.GetAudio().WithHighestBitrate();
-            var videoStreamInfo = streamManifest.GetVideo().FirstOrDefault(s => s.VideoQuality == VideoQuality.High1080);
-            var streamInfos = new IStreamInfo[] { audioStreamInfo, videoStreamInfo };
-            await _youtubeConverter.DownloadAndProcessMediaStreamsAsync(streamInfos, $"D://Downloads//fg.mp4", videoStreamInfo.Container.Name);
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            //var youtube = new YoutubeClient();
+            //IYoutubeConverter _youtubeConverter = new YoutubeConverter();
+            //var streamManifest = await youtube.Videos.Streams.GetManifestAsync("https://youtu.be/2zToEPpFEN8");
+            //var audioStreamInfo = streamManifest.GetAudio().WithHighestBitrate();
+            //var videoStreamInfo = streamManifest.GetVideo().FirstOrDefault(s => s.VideoQuality == VideoQuality.High1080);
+            //var streamInfos = new IStreamInfo[] { audioStreamInfo, videoStreamInfo };
+            //await _youtubeConverter.DownloadAndProcessMediaStreamsAsync(streamInfos, $"D://Downloads//fg.mp4", videoStreamInfo.Container.Name);
             //await youtube.Videos.Streams.DownloadAsync(videoStreamInfo, $"D://Downloads//video.mp4");
             //var builder = new ConversionRequestBuilder("video.mp4").Build();
             //await youtube.Videos.DownloadAsync(streamInfos, builder);
-            Console.WriteLine("Video was downloaded");
+            //Console.WriteLine("Video was downloaded");
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            KoatuuManager manager = new KoatuuManager();
+            await manager.LoadData();
+            var cities = manager.GetCitiesByName("М.Київ").OrderBy(d=>d.Name);
+            Console.WriteLine($"Founded {cities.Count()} cities");
+            foreach (var city in cities)
+            {
+                Console.WriteLine($"Id: {city.Id}, Name: {city.Name}");
+            }
         }
 
         static UserRepository CreateUserRepos()
