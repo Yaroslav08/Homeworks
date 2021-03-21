@@ -15,7 +15,7 @@ namespace WFLaba1
         public Form1()
         {
             InitializeComponent();
-
+            Text = "Yaroslav Mudryk";
             Load += (sender, e) =>
               {
                   for (int i = 1; i <= 16; i++)
@@ -23,9 +23,9 @@ namespace WFLaba1
                       Button btn = new Button();
                       btn.Name = $"button{i}";
                       btn.Text = $"{i}";
-                      btn.Size = new Size(30, 30);
-                      btn.Location = new Point(10, 30 * i);
+                      btn.Size = new Size(40, 30);
                       btn.Click += buttonClick;
+                      btn.Location = new Point(10, 30 * i);
                       Controls.Add(btn);
                   }
               };
@@ -39,5 +39,10 @@ namespace WFLaba1
             (sender as Button).Visible = false;
         }
 
+    }
+
+    public class Some
+    {
+        public Guid Id { get; set; } = Guid.NewGuid();
     }
 }
