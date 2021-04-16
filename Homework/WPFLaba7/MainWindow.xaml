@@ -1,0 +1,22 @@
+﻿<Window x:Class="WPFLaba7.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFLaba7"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Button x:Name="btnCreateFolders"
+                Width="100"
+                Height="25"
+                Background="Lime"
+                VerticalAlignment="Top" HorizontalAlignment="Left"
+                Margin="170, 12"
+                Click="btnCreateFolders_Click">Створити папки</Button>
+        <TextBox x:Name="tbtPath" Width="150" Height="30" VerticalAlignment="Top" HorizontalAlignment="Left" Background="Gray" Margin="10,10" Cursor="Hand"></TextBox>
+        <Button x:Name="getFilesListbtn" Width="150" Height="30" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10, 50" Click="getFilesListbtn_Click">Отримати файли</Button>
+        <ListBox x:Name="filesListlb" Width="270" VerticalAlignment="Stretch" HorizontalAlignment="Left" Margin="0 100 0 0" SelectionChanged="filesListlb_SelectionChanged"/>
+        <TextBox VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="275 0 0 0" x:Name="tbtText" VerticalScrollBarVisibility="Auto"></TextBox>
+    </Grid>
+</Window>
