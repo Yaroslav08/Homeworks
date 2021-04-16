@@ -44,7 +44,16 @@ namespace WPFLaba7
         private async void filesListlb_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             var file = filesListlb.SelectedItem as string;
-            tbtText.Text = await new StreamReader(file).ReadToEndAsync();
+            using var fileStream = File.OpenRead(file);
+            byte[] b = new byte[1024 * 8];
+            UTF8Encoding temp = new UTF8Encoding(true);
+            string content = null;
+            while (await fileStream.ReadAsync(b, 0, b.Length) > 0)
+            {
+                content += temp.GetString(b);
+            }
+            await fileStream.DisposeAsync();
+            tbtText.Text = content;
         }
     }
 }
